@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #FF3D00; /* Vibrant Orange */
+  --color-brand-blue: #1E3A8A;   /* Deep Blue */
+  --color-background: #FF3D00;   /* Default background is orange based on screenshot */
+  --color-foreground: #FFFFFF;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
