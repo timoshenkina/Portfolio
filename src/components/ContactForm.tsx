@@ -67,7 +67,7 @@ export default function ContactForm() {
                     >
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label htmlFor="name" className="text-sm font-bold text-zinc-400 uppercase tracking-wider ml-1">
+                                <label htmlFor="name" className="text-sm font-bold text-indigo-100 uppercase tracking-widest ml-1 drop-shadow-sm blur-[0.3px]">
                                     {t('name_label')}
                                 </label>
                                 <input
@@ -82,7 +82,7 @@ export default function ContactForm() {
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="email" className="text-sm font-bold text-zinc-400 uppercase tracking-wider ml-1">
+                                <label htmlFor="email" className="text-sm font-bold text-indigo-100 uppercase tracking-widest ml-1 drop-shadow-sm blur-[0.3px]">
                                     {t('email_label')}
                                 </label>
                                 <input
@@ -99,7 +99,7 @@ export default function ContactForm() {
                         </div>
 
                         <div className="space-y-2">
-                            <label htmlFor="message" className="text-sm font-bold text-zinc-400 uppercase tracking-wider ml-1">
+                            <label htmlFor="message" className="text-sm font-bold text-indigo-100 uppercase tracking-widest ml-1 drop-shadow-sm blur-[0.3px]">
                                 {t('message_label')}
                             </label>
                             <textarea
@@ -124,17 +124,17 @@ export default function ContactForm() {
                         <button
                             disabled={status === 'loading'}
                             type="submit"
-                            className="w-full md:w-auto px-10 py-4 bg-gradient-to-b from-blue-50 to-indigo-100 text-indigo-900 font-bold rounded-full hover:scale-[1.02] transition-all active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-2 shadow-[0_10px_20px_-5px_rgba(99,102,241,0.2),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(99,102,241,0.1)] border border-indigo-100 hover:shadow-[0_15px_25px_-5px_rgba(99,102,241,0.3)] group"
+                            className="w-full md:w-auto px-12 py-5 bg-[#CBBDEB]/60 backdrop-blur-xl text-[#4c1d95] font-medium rounded-full hover:bg-[#CBBDEB]/80 transition-all active:scale-95 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 group"
                         >
                             {status === 'loading' ? (
                                 <>
-                                    <div className="w-5 h-5 border-2 border-indigo-300 border-t-indigo-600 rounded-full animate-spin"></div>
+                                    <div className="w-5 h-5 border-2 border-[#581c87] border-t-transparent rounded-full animate-spin"></div>
                                     {t('sending_btn')}
                                 </>
                             ) : (
                                 <>
-                                    <span className="drop-shadow-sm">{t('send_btn')}</span>
-                                    <Send className="w-5 h-5 text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                    <span className="drop-shadow-sm tracking-wide">{t('send_btn')}</span>
+                                    <Send className="w-5 h-5 text-[#581c87] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                 </>
                             )}
                         </button>

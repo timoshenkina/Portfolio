@@ -48,7 +48,7 @@ export default function Home() {
 
                         <button
                             onClick={() => setIsContactModalOpen(true)}
-                            className="px-6 py-2.5 text-sm font-bold bg-blue-400/20 backdrop-blur-xl text-blue-900 rounded-full hover:bg-blue-400/30 transition shadow-[0_4px_20px_-2px_rgba(59,130,246,0.2),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/60 hidden sm:block active:scale-95"
+                            className="px-6 py-2.5 text-sm font-bold bg-[#CBBDEB]/60 backdrop-blur-xl text-[#4c1d95] rounded-full hover:bg-[#CBBDEB]/80 transition shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 hidden sm:block active:scale-95"
                         >
                             {t('Navigation.cta')}
                         </button>
@@ -83,17 +83,17 @@ export default function Home() {
                     <div className="flex flex-wrap gap-4">
                         <button
                             onClick={() => setIsContactModalOpen(true)}
-                            className="px-10 py-5 bg-blue-500/15 backdrop-blur-2xl text-blue-900 font-bold rounded-full hover:bg-blue-500/25 transition active:scale-95 flex items-center gap-3 shadow-[0_20px_40px_-12px_rgba(59,130,246,0.2),inset_0_1px_0_rgba(255,255,255,0.8)] border border-white/70 group"
+                            className="px-10 py-5 bg-[#CBBDEB]/60 backdrop-blur-xl text-[#4c1d95] font-bold rounded-full hover:bg-[#CBBDEB]/80 transition active:scale-95 flex items-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 group"
                         >
-                            <Mail className="w-5 h-5 text-blue-700 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                            <Mail className="w-5 h-5 text-[#581c87] group-hover:-translate-y-0.5 transition-transform duration-300" />
                             <span className="drop-shadow-sm">{t('Hero.email_btn')}</span>
                         </button>
                         <a
                             href="#"
                             target="_blank"
-                            className="px-10 py-5 bg-white/40 backdrop-blur-xl border border-white/60 text-indigo-900 font-bold rounded-full hover:bg-white/60 transition active:scale-95 flex items-center gap-3 group shadow-[0_15px_30px_-10px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.8)]"
+                            className="px-10 py-5 bg-[#CBBDEB]/40 backdrop-blur-xl text-[#4c1d95] font-bold rounded-full hover:bg-[#CBBDEB]/60 transition active:scale-95 flex items-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 group"
                         >
-                            <Send className="w-5 h-5 text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                            <Send className="w-5 h-5 text-[#581c87] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                             {t('Hero.telegram_btn')}
                         </a>
                     </div>
