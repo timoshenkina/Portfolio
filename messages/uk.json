@@ -1,0 +1,72 @@
+{
+    "Navigation": {
+        "brand": "TYMOSHENKINA",
+        "work": "Роботи",
+        "about": "Про мене & CV",
+        "contact": "Контакти",
+        "cta": "Обговорити проєкт"
+    },
+    "Hero": {
+        "available": "Відкрито до співпраці",
+        "title_graphic": "Графічний та",
+        "title_uxui": "UX/UI Дизайнер",
+        "description": "Я створюю цифрові продукти, що поєднують <span class=\"text-zinc-900 font-medium\">мінімалістичну естетику</span> та <span class=\"text-zinc-900 font-medium\">логіку користувача</span>. Зараз переходжу від графічного дизайну до створення повноцінних цифрових продуктів.",
+        "email_btn": "Написати Email",
+        "telegram_btn": "Telegram"
+    },
+    "Work": {
+        "title": "Вибрані роботи",
+        "view_all": "Всі роботи",
+        "project1": {
+            "title": "Редизайн Лендінгу",
+            "tags": "Веб-дизайн • 2024"
+        },
+        "project2": {
+            "title": "Концепт Мобільного Додатку",
+            "tags": "UX/UI • 2024"
+        }
+    },
+    "About": {
+        "title": "Досвід та Навички",
+        "description": "Привіт. Мене звати Дарина Тимошенко, я молодший дизайнер та ілюстратор. Я малюю у графічній сфері вже понад 5 років, і зараз розширюю свої навички у векторі, лендінгах та веб-розробці.",
+        "download_cv": "Завантажити CV",
+        "experience": {
+            "job1": {
+                "title": "UX/UI Design",
+                "date": "1+ роки",
+                "desc": "Приватне навчання UX/UI дизайну. Володіння інструментами Figma, Adobe XD та Affinity. Створення інтерфейсів веб-сайтів з фокусом на зручність та візуальну привабливість."
+            },
+            "job2": {
+                "title": "Graphic Design",
+                "date": "2+ роки",
+                "desc": "Досвід розробки логотипів та брендингу для різних сфер. Створення візуального контенту для соціальних мереж приватних бізнесів."
+            },
+            "job3": {
+                "title": "Graphic Drawing",
+                "date": "5+ років",
+                "desc": "Adobe Photoshop (обробка, корекція кольору), Adobe Illustrator (ілюстрації, логотипи, банери). Зараз переходжу на Affinity Designer/Photo."
+            }
+        },
+        "skills": {
+            "title": "Технології та Інструменти",
+            "list": [
+                "Figma",
+                "Adobe XD",
+                "Adobe Photoshop",
+                "Adobe Illustrator",
+                "Affinity Designer",
+                "Affinity Photo",
+                "Procreate",
+                "HTML/CSS Basics"
+            ]
+        }
+    },
+    "Footer": {
+        "copyright": "© 2024 Tymoshenkina Design. Всі права захищені."
+    },
+    "Contact": {
+        "email": "darynatimoshenkina@gmail.com",
+        "phone": "+380675063995",
+        "location": "Україна, Львів"
+    }
+}

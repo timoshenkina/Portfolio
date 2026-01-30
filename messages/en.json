@@ -1,0 +1,72 @@
+{
+    "Navigation": {
+        "brand": "TYMOSHENKINA",
+        "work": "Work",
+        "about": "About & CV",
+        "contact": "Contact",
+        "cta": "Let's Talk"
+    },
+    "Hero": {
+        "available": "Open for work",
+        "title_graphic": "Graphic &",
+        "title_uxui": "UX/UI Designer",
+        "description": "I craft digital experiences that blend <span class=\"text-zinc-900 font-medium\">minimalist aesthetics</span> with <span class=\"text-zinc-900 font-medium\">user-centered logic</span>. Currently transitioning from graphic design to building full digital products.",
+        "email_btn": "Email Me",
+        "telegram_btn": "Telegram"
+    },
+    "Work": {
+        "title": "Selected Works",
+        "view_all": "View all works",
+        "project1": {
+            "title": "Landing Page Redesign",
+            "tags": "Web Design • 2024"
+        },
+        "project2": {
+            "title": "Mobile App Concept",
+            "tags": "UX/UI • 2024"
+        }
+    },
+    "About": {
+        "title": "Experience & Skills",
+        "description": "Hi. My name is Darina Timoshenko, I am a junior designer and illustrator. I have been drawing in the graphic sphere for more than 5 years, and currently, I am expanding into vector art, landing pages, and web development.",
+        "download_cv": "Download Full CV",
+        "experience": {
+            "job1": {
+                "title": "UX/UI Design",
+                "date": "1+ years",
+                "desc": "Privately trained in UX/UI design. Mastered tools such as Figma, Adobe XD, and Affinity programs. Created website interfaces, focusing on usability and visual appeal."
+            },
+            "job2": {
+                "title": "Graphic Design",
+                "date": "2+ years",
+                "desc": "Experience in designing logos and branding for different industries. Engaged in content creation for social networks of private businesses."
+            },
+            "job3": {
+                "title": "Graphic Drawing",
+                "date": "5+ years",
+                "desc": "Adobe Photoshop (processing, color correction), Adobe Illustrator (illustrations, logos, banners). Currently switching to Affinity Designer/Photo."
+            }
+        },
+        "skills": {
+            "title": "Technologies & Tools",
+            "list": [
+                "Figma",
+                "Adobe XD",
+                "Adobe Photoshop",
+                "Adobe Illustrator",
+                "Affinity Designer",
+                "Affinity Photo",
+                "Procreate",
+                "HTML/CSS Basics"
+            ]
+        }
+    },
+    "Footer": {
+        "copyright": "© 2024 Tymoshenkina Design. All rights reserved."
+    },
+    "Contact": {
+        "email": "darynatimoshenkina@gmail.com",
+        "phone": "+380675063995",
+        "location": "Ukraine, Lviv"
+    }
+}
