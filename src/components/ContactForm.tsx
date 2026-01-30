@@ -78,7 +78,7 @@ export default function ContactForm() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder={t('name_placeholder')}
-                                    className="w-full px-6 py-4 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-zinc-900 placeholder:text-zinc-300"
+                                    className="w-full px-6 py-4 bg-indigo-50/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all text-zinc-900 placeholder:text-zinc-500 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] backdrop-blur-sm"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -93,7 +93,7 @@ export default function ContactForm() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder={t('email_placeholder')}
-                                    className="w-full px-6 py-4 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-zinc-900 placeholder:text-zinc-300"
+                                    className="w-full px-6 py-4 bg-indigo-50/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all text-zinc-900 placeholder:text-zinc-500 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] backdrop-blur-sm"
                                 />
                             </div>
                         </div>
@@ -110,7 +110,7 @@ export default function ContactForm() {
                                 value={formData.message}
                                 onChange={handleChange}
                                 placeholder={t('message_placeholder')}
-                                className="w-full px-6 py-4 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-zinc-900 placeholder:text-zinc-300 resize-none"
+                                className="w-full px-6 py-4 bg-indigo-50/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all text-zinc-900 placeholder:text-zinc-500 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] backdrop-blur-sm resize-none"
                             ></textarea>
                         </div>
 
@@ -124,17 +124,17 @@ export default function ContactForm() {
                         <button
                             disabled={status === 'loading'}
                             type="submit"
-                            className="w-full md:w-auto px-10 py-4 bg-zinc-900 text-white font-bold rounded-2xl hover:scale-[1.02] transition-all active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-2"
+                            className="w-full md:w-auto px-10 py-4 bg-gradient-to-b from-blue-50 to-indigo-100 text-indigo-900 font-bold rounded-full hover:scale-[1.02] transition-all active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-2 shadow-[0_10px_20px_-5px_rgba(99,102,241,0.2),inset_0_2px_4px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(99,102,241,0.1)] border border-indigo-100 hover:shadow-[0_15px_25px_-5px_rgba(99,102,241,0.3)] group"
                         >
                             {status === 'loading' ? (
                                 <>
-                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                    <div className="w-5 h-5 border-2 border-indigo-300 border-t-indigo-600 rounded-full animate-spin"></div>
                                     {t('sending_btn')}
                                 </>
                             ) : (
                                 <>
-                                    <Send className="w-5 h-5" />
-                                    {t('send_btn')}
+                                    <span className="drop-shadow-sm">{t('send_btn')}</span>
+                                    <Send className="w-5 h-5 text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                 </>
                             )}
                         </button>
