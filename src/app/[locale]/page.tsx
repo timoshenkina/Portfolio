@@ -1,8 +1,12 @@
+'use client';
+
+import React, { useState } from 'react';
 import { Link } from '../../i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import InteractiveEyes from '@/components/InteractiveEyes';
 import ProjectPreviews from '@/components/ProjectPreviews';
 import ContactForm from '@/components/ContactForm';
+import ContactModal from '@/components/ContactModal';
 import { useTranslations } from 'next-intl';
 import { ArrowUpRight, Mail, Send, Download, Briefcase, GraduationCap, MapPin, Phone } from "lucide-react";
 
@@ -10,6 +14,7 @@ import HeroVisuals from '@/components/HeroVisuals';
 
 export default function Home() {
     const t = useTranslations();
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     // Helper to parse HTML strings safely (very basic replacement for demo)
     // Ideally use the rich text support from next-intl
@@ -39,15 +44,14 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        {/* Language Switcher Placeholder - Functional by changing URL manually for now */}
                         <LanguageSwitcher />
 
-                        <a
-                            href="mailto:darynatimoshenkina@gmail.com"
+                        <button
+                            onClick={() => setIsContactModalOpen(true)}
                             className="px-4 py-2 text-sm font-semibold bg-zinc-900 text-white rounded-full hover:bg-zinc-800 transition hidden sm:block"
                         >
                             {t('Navigation.cta')}
-                        </a>
+                        </button>
                     </div>
 
                 </div>
@@ -77,13 +81,13 @@ export default function Home() {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <a
-                            href="mailto:darynatimoshenkina@gmail.com"
+                        <button
+                            onClick={() => setIsContactModalOpen(true)}
                             className="px-8 py-4 bg-zinc-900 text-white font-bold rounded-2xl hover:scale-105 transition active:scale-95 flex items-center gap-2"
                         >
                             <Mail className="w-5 h-5" />
                             {t('Hero.email_btn')}
-                        </a>
+                        </button>
                         <a
                             href="#"
                             target="_blank"
@@ -221,11 +225,21 @@ export default function Home() {
                     <p className="text-zinc-400 text-sm">{t('Footer.copyright')}</p>
                     <div className="flex gap-6">
                         <a href="#" className="text-zinc-400 hover:text-indigo-600 transition">Telegram</a>
-                        <a href="mailto:darynatimoshenkina@gmail.com" className="text-zinc-400 hover:text-indigo-600 transition">Email</a>
+                        <button
+                            onClick={() => setIsContactModalOpen(true)}
+                            className="text-zinc-400 hover:text-indigo-600 transition"
+                        >
+                            Email
+                        </button>
                         <a href="https://www.behance.net/tymoshenkina" target="_blank" className="text-zinc-400 hover:text-indigo-600 transition">Behance</a>
                     </div>
                 </footer>
 
+                {/* Contact Modal */}
+                <ContactModal
+                    isOpen={isContactModalOpen}
+                    onClose={() => setIsContactModalOpen(false)}
+                />
             </main>
         </div>
     );
