@@ -124,7 +124,7 @@ export default function ContactForm() {
                         <button
                             disabled={status === 'loading'}
                             type="submit"
-                            className="w-full md:w-auto px-12 py-5 bg-[#CBBDEB]/60 backdrop-blur-xl text-[#4c1d95] font-medium rounded-full hover:bg-[#CBBDEB]/80 transition-all active:scale-95 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 group"
+                            className="w-full md:w-auto px-12 py-5 bg-[#E8E0F5]/60 backdrop-blur-xl text-[#4c1d95] font-medium rounded-full hover:bg-[#E8E0F5]/80 transition-all active:scale-95 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/50 group"
                         >
                             {status === 'loading' ? (
                                 <>

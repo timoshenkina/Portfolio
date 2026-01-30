@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link } from '../../i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import InteractiveEyes from '@/components/InteractiveEyes';
-import ProjectPreviews from '@/components/ProjectPreviews';
+import PortfolioCategories from '@/components/PortfolioCategories';
 import ContactForm from '@/components/ContactForm';
 import ContactModal from '@/components/ContactModal';
 import { useTranslations } from 'next-intl';
@@ -48,7 +48,7 @@ export default function Home() {
 
                         <button
                             onClick={() => setIsContactModalOpen(true)}
-                            className="px-6 py-2.5 text-sm font-bold bg-[#CBBDEB]/60 backdrop-blur-xl text-[#4c1d95] rounded-full hover:bg-[#CBBDEB]/80 transition shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 hidden sm:block active:scale-95"
+                            className="px-6 py-2.5 text-sm font-bold bg-[#E8E0F5]/60 backdrop-blur-xl text-[#4c1d95] rounded-full hover:bg-[#E8E0F5]/80 transition shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/50 hidden sm:block active:scale-95"
                         >
                             {t('Navigation.cta')}
                         </button>
@@ -68,7 +68,12 @@ export default function Home() {
 
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-zinc-900 mb-8 leading-[0.9]">
                         {t('Hero.title_graphic')} <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-500">
+                        <span
+                            className="text-transparent bg-clip-text bg-[linear-gradient(110deg,#4338ca_0%,#a855f7_30%,rgba(255,255,255,0.4)_50%,#a855f7_70%,#ec4899_100%)] bg-[length:250%_100%] animate-iridescent drop-shadow-[0_2px_10px_rgba(168,85,247,0.15)]"
+                            style={{
+                                textShadow: '0 0 20px rgba(168, 85, 247, 0.1), 0 0 40px rgba(236, 72, 153, 0.05)'
+                            }}
+                        >
                             {t('Hero.title_uxui')}
                         </span>
                     </h1>
@@ -83,7 +88,7 @@ export default function Home() {
                     <div className="flex flex-wrap gap-4">
                         <button
                             onClick={() => setIsContactModalOpen(true)}
-                            className="px-10 py-5 bg-[#CBBDEB]/60 backdrop-blur-xl text-[#4c1d95] font-bold rounded-full hover:bg-[#CBBDEB]/80 transition active:scale-95 flex items-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 group"
+                            className="px-10 py-5 bg-[#E8E0F5]/60 backdrop-blur-xl text-[#4c1d95] font-bold rounded-full hover:bg-[#E8E0F5]/80 transition active:scale-95 flex items-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/50 group"
                         >
                             <Mail className="w-5 h-5 text-[#581c87] group-hover:-translate-y-0.5 transition-transform duration-300" />
                             <span className="drop-shadow-sm">{t('Hero.email_btn')}</span>
@@ -91,7 +96,7 @@ export default function Home() {
                         <a
                             href="#"
                             target="_blank"
-                            className="px-10 py-5 bg-[#CBBDEB]/40 backdrop-blur-xl text-[#4c1d95] font-bold rounded-full hover:bg-[#CBBDEB]/60 transition active:scale-95 flex items-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40 group"
+                            className="px-10 py-5 bg-[#E8E0F5]/60 backdrop-blur-xl text-[#4c1d95] font-bold rounded-full hover:bg-[#E8E0F5]/80 transition active:scale-95 flex items-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/50 group"
                         >
                             <Send className="w-5 h-5 text-[#581c87] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                             {t('Hero.telegram_btn')}
@@ -99,8 +104,8 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Selected Works - New Horizontal Preview Component */}
-                <ProjectPreviews />
+                {/* Selected Works - Categorized Portfolio */}
+                <PortfolioCategories />
 
                 {/* CV / Experience Section */}
                 <section id="about" className="mb-32 scroll-mt-24">

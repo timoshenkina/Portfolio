@@ -1,12 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #6366f1;   /* Indigo - Creative & Professional */
-  --color-brand-secondary: #ec4899; /* Pink - Vibrant Accent */
-  --color-brand-accent: #14b8a6;    /* Teal - Freshness */
-  --color-background: #fafafa;      /* Clean White/Grey */
-  --color-foreground: #171717;      /* Deep Black for text */
-  --color-surface: #ffffff;         /* Pure white for cards */
+  --color-brand-primary: #6366f1;
+  /* Indigo - Creative & Professional */
+  --color-brand-secondary: #ec4899;
+  /* Pink - Vibrant Accent */
+  --color-brand-accent: #14b8a6;
+  /* Teal - Freshness */
+  --color-background: #fafafa;
+  /* Clean White/Grey */
+  --color-foreground: #171717;
+  /* Deep Black for text */
+  --color-surface: #ffffff;
+  /* Pure white for cards */
+
+  --animate-iridescent: iridescent 8s linear infinite;
+
+  @keyframes iridescent {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 body {
