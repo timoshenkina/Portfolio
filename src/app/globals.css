@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-orange: #FF3D00; /* Vibrant Orange */
-  --color-brand-blue: #1E3A8A;   /* Deep Blue */
-  --color-background: #FF3D00;   /* Default background is orange based on screenshot */
-  --color-foreground: #FFFFFF;
+  --color-brand-primary: #6366f1;   /* Indigo - Creative & Professional */
+  --color-brand-secondary: #ec4899; /* Pink - Vibrant Accent */
+  --color-brand-accent: #14b8a6;    /* Teal - Freshness */
+  --color-background: #fafafa;      /* Clean White/Grey */
+  --color-foreground: #171717;      /* Deep Black for text */
+  --color-surface: #ffffff;         /* Pure white for cards */
 }
 
 body {
