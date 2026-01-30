@@ -1,8 +1,9 @@
 {
     "Navigation": {
         "brand": "TYMOSHENKINA",
-        "work": "Работы",
-        "about": "Обо мне & CV",
+        "home": "Главная",
+        "work": "Портфолио",
+        "about": "Обо мне",
         "contact": "Контакты",
         "cta": "Обсудить проект"
     },
@@ -15,7 +16,7 @@
         "telegram_btn": "Telegram"
     },
     "Work": {
-        "title": "Избранные работы",
+        "title": "Портфолио",
         "view_all": "Все работы",
         "project1": {
             "title": "Редизайн Лендинга",
@@ -27,7 +28,7 @@
         }
     },
     "About": {
-        "title": "Опыт и Навыки",
+        "title": "Обо мне",
         "description": "Я специализируюсь на создании чистых и эффективных интерфейсов. Мой бэкграунд в графическом дизайне помогает работать с композицией и цветом, а знания продуктового дизайна обеспечивают удобство использования.",
         "download_cv": "Скачать CV",
         "experience": {
@@ -48,5 +49,22 @@
     },
     "Footer": {
         "copyright": "© 2024 Tymoshenkina Design. Все права защищены."
+    },
+    "Contact": {
+        "title": "Связаться со мной",
+        "description": "Есть проект? Давайте обсудим, чем я могу быть полезна.",
+        "name_label": "Имя и Фамилия",
+        "name_placeholder": "Иван Иванов",
+        "email_label": "Email",
+        "email_placeholder": "ivan@example.com",
+        "message_label": "Сообщение",
+        "message_placeholder": "Как я могу вам помочь?",
+        "send_btn": "Отправить",
+        "sending_btn": "Отправка...",
+        "success_msg": "Спасибо! Ваше сообщение отправлено.",
+        "error_msg": "Что-то пошло не так. Пожалуйста, попробуйте позже.",
+        "email": "darynatimoshenkina@gmail.com",
+        "phone": "+380675063995",
+        "location": "Украина, Львов"
     }
 }

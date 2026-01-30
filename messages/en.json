@@ -1,8 +1,9 @@
 {
     "Navigation": {
         "brand": "TYMOSHENKINA",
-        "work": "Work",
-        "about": "About & CV",
+        "home": "Home",
+        "work": "Portfolio",
+        "about": "About",
         "contact": "Contact",
         "cta": "Let's Talk"
     },
@@ -10,12 +11,12 @@
         "available": "Open for work",
         "title_graphic": "Graphic &",
         "title_uxui": "UX/UI Designer",
-        "description": "I craft digital experiences that blend <span class=\"text-zinc-900 font-medium\">minimalist aesthetics</span> with <span class=\"text-zinc-900 font-medium\">user-centered logic</span>. Currently transitioning from graphic design to building full digital products.",
+        "description": "Welcome to my portfolio page. Here you can check out my work and arts. Let's collaborate together and create great products.",
         "email_btn": "Email Me",
         "telegram_btn": "Telegram"
     },
     "Work": {
-        "title": "Selected Works",
+        "title": "Portfolio",
         "view_all": "View all works",
         "project1": {
             "title": "Landing Page Redesign",
@@ -27,7 +28,7 @@
         }
     },
     "About": {
-        "title": "Experience & Skills",
+        "title": "About",
         "description": "Hi. My name is Darina Timoshenko, I am a junior designer and illustrator. I have been drawing in the graphic sphere for more than 5 years, and currently, I am expanding into vector art, landing pages, and web development.",
         "download_cv": "Download Full CV",
         "experience": {
@@ -45,6 +46,16 @@
                 "title": "Graphic Drawing",
                 "date": "5+ years",
                 "desc": "Adobe Photoshop (processing, color correction), Adobe Illustrator (illustrations, logos, banners). Currently switching to Affinity Designer/Photo."
+            },
+            "job4": {
+                "title": "Mastery of Key Design Tools",
+                "date": "Tools",
+                "desc": "Basic fluency with programs: Figma, Affinity Designer/Photo, Adobe XD, Procreate."
+            },
+            "job5": {
+                "title": "Communication",
+                "date": "Soft Skills",
+                "desc": "Well-developed communication skills to ensure productive interactions with customers."
             }
         },
         "skills": {
@@ -65,6 +76,18 @@
         "copyright": "© 2024 Tymoshenkina Design. All rights reserved."
     },
     "Contact": {
+        "title": "Get in Touch",
+        "description": "Have a project in mind? Let's talk about how I can help you.",
+        "name_label": "Name & Surname",
+        "name_placeholder": "John Doe",
+        "email_label": "Email",
+        "email_placeholder": "john@example.com",
+        "message_label": "Message",
+        "message_placeholder": "How can I help you?",
+        "send_btn": "Send Message",
+        "sending_btn": "Sending...",
+        "success_msg": "Thank you! Your message has been sent.",
+        "error_msg": "Something went wrong. Please try again later.",
         "email": "darynatimoshenkina@gmail.com",
         "phone": "+380675063995",
         "location": "Ukraine, Lviv"

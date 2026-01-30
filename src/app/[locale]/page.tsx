@@ -1,7 +1,12 @@
 import { Link } from '../../i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import InteractiveEyes from '@/components/InteractiveEyes';
+import ProjectPreviews from '@/components/ProjectPreviews';
+import ContactForm from '@/components/ContactForm';
 import { useTranslations } from 'next-intl';
-import { ArrowUpRight, Mail, Send, Download, Briefcase, GraduationCap } from "lucide-react";
+import { ArrowUpRight, Mail, Send, Download, Briefcase, GraduationCap, MapPin, Phone } from "lucide-react";
+
+import HeroVisuals from '@/components/HeroVisuals';
 
 export default function Home() {
     const t = useTranslations();
@@ -27,6 +32,7 @@ export default function Home() {
                         <span className="opacity-90">{t('Navigation.brand')}</span>
                     </Link>
                     <div className="hidden md:flex gap-8 text-sm font-medium text-zinc-600">
+                        <Link href="/" className="hover:text-indigo-600 transition">{t('Navigation.home')}</Link>
                         <Link href="/#work" className="hover:text-indigo-600 transition">{t('Navigation.work')}</Link>
                         <Link href="/#about" className="hover:text-indigo-600 transition">{t('Navigation.about')}</Link>
                         <Link href="/#contact" className="hover:text-indigo-600 transition">{t('Navigation.contact')}</Link>
@@ -49,9 +55,10 @@ export default function Home() {
 
             <main className="pt-32 pb-20 px-6 max-w-6xl mx-auto">
                 {/* Hero Section */}
-                <section className="mb-32">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
-                        <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                <section className="mb-32 relative">
+                    <HeroVisuals />
+                    <div className="inline-flex items-center gap-2 px-1 py-1 pr-3 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+                        <InteractiveEyes />
                         {t('Hero.available')}
                     </div>
 
@@ -64,7 +71,8 @@ export default function Home() {
 
                     <p className="text-xl md:text-2xl text-zinc-500 max-w-2xl leading-relaxed mb-10">
                         {t.rich('Hero.description', {
-                            span: (chunks) => <span className="text-zinc-900 font-medium">{chunks}</span>
+                            span: (chunks) => <span className="text-zinc-900 font-medium">{chunks}</span>,
+                            br: () => <br />
                         })}
                     </p>
 
@@ -87,40 +95,8 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Selected Works Placeholder */}
-                <section id="work" className="mb-32">
-                    <div className="flex items-end justify-between mb-12">
-                        <h2 className="text-3xl font-bold tracking-tight">{t('Work.title')}</h2>
-                        <Link href="/projects" className="text-sm font-medium text-zinc-500 hover:text-indigo-600 flex items-center gap-1">
-                            {t('Work.view_all')} <ArrowUpRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {/* Project Card 1 */}
-                        <div className="group cursor-pointer">
-                            <div className="aspect-[4/3] bg-zinc-100 rounded-3xl overflow-hidden mb-4 border border-zinc-100 relative group-hover:shadow-xl transition-all duration-300">
-                                <div className="absolute inset-0 flex items-center justify-center text-zinc-400">
-                                    <span className="font-mono text-sm">Project Preview Image</span>
-                                </div>
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
-                            </div>
-                            <h3 className="text-xl font-bold mb-1 group-hover:text-indigo-600 transition">{t('Work.project1.title')}</h3>
-                            <p className="text-zinc-500 text-sm">{t('Work.project1.tags')}</p>
-                        </div>
-
-                        {/* Project Card 2 */}
-                        <div className="group cursor-pointer md:mt-16">
-                            <div className="aspect-[4/3] bg-indigo-50 rounded-3xl overflow-hidden mb-4 border border-indigo-100 relative group-hover:shadow-xl transition-all duration-300">
-                                <div className="absolute inset-0 flex items-center justify-center text-indigo-300">
-                                    <span className="font-mono text-sm">Project Preview Image</span>
-                                </div>
-                            </div>
-                            <h3 className="text-xl font-bold mb-1 group-hover:text-indigo-600 transition">{t('Work.project2.title')}</h3>
-                            <p className="text-zinc-500 text-sm">{t('Work.project2.tags')}</p>
-                        </div>
-                    </div>
-                </section>
+                {/* Selected Works - New Horizontal Preview Component */}
+                <ProjectPreviews />
 
                 {/* CV / Experience Section */}
                 <section id="about" className="mb-32 scroll-mt-24">
@@ -137,21 +113,31 @@ export default function Home() {
 
                         <div className="md:col-span-2 space-y-12">
                             {/* Experience List */}
-                            <div className="space-y-8">
-                                {['job1', 'job2', 'job3'].map((jobKey, index) => (
-                                    <div key={jobKey} className="flex gap-4">
-                                        <div className={`mt-1 min-w-10 h-10 rounded-full flex items-center justify-center ${index === 0 ? 'bg-indigo-100 text-indigo-600' :
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {['job1', 'job2', 'job3', 'job4', 'job5'].map((jobKey, index) => (
+                                    <div key={jobKey} className="flex flex-col gap-3 p-4 rounded-2xl hover:bg-zinc-50 transition border border-transparent hover:border-zinc-100">
+                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-2 ${index === 0 ? 'bg-indigo-100 text-indigo-600' :
                                             index === 1 ? 'bg-pink-100 text-pink-600' :
-                                                'bg-yellow-100 text-yellow-600'
+                                                index === 2 ? 'bg-amber-100 text-amber-600' :
+                                                    index === 3 ? 'bg-emerald-100 text-emerald-600' :
+                                                        'bg-blue-100 text-blue-600'
                                             }`}>
-                                            {index === 0 ? <Briefcase className="w-5 h-5" /> :
-                                                index === 1 ? <GraduationCap className="w-5 h-5" /> :
-                                                    <ArrowUpRight className="w-5 h-5" />}
+                                            {index === 0 ? <Briefcase className="w-6 h-6" /> :
+                                                index === 1 ? <GraduationCap className="w-6 h-6" /> :
+                                                    index === 2 ? <ArrowUpRight className="w-6 h-6" /> :
+                                                        index === 3 ? <Briefcase className="w-6 h-6" /> :
+                                                            <Send className="w-6 h-6" />}
                                         </div>
                                         <div>
-                                            <h4 className="text-lg font-bold">{t(`About.experience.${jobKey}.title`)}</h4>
-                                            <p className="text-sm text-zinc-500 mb-2">{t(`About.experience.${jobKey}.date`)}</p>
-                                            <p className="text-zinc-600 leading-relaxed">
+                                            <h4 className={`text-lg font-black uppercase tracking-tight mb-1 ${index % 2 === 0 ? 'text-indigo-900' : 'text-zinc-900'
+                                                }`}>{t(`About.experience.${jobKey}.title`)}</h4>
+                                            <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${index === 0 ? 'text-indigo-500' :
+                                                index === 1 ? 'text-pink-500' :
+                                                    index === 2 ? 'text-amber-500' :
+                                                        index === 3 ? 'text-emerald-500' :
+                                                            'text-blue-500'
+                                                }`}>{t(`About.experience.${jobKey}.date`)}</p>
+                                            <p className="text-zinc-600 text-sm leading-relaxed">
                                                 {t(`About.experience.${jobKey}.desc`)}
                                             </p>
                                         </div>
@@ -170,6 +156,62 @@ export default function Home() {
                                     ))}
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Contact Section */}
+                <section id="contact" className="mb-32 scroll-mt-24">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">{t('Contact.title')}</h2>
+                        <p className="text-zinc-500 max-w-xl mx-auto text-lg leading-relaxed">
+                            {t('Contact.description')}
+                        </p>
+                    </div>
+
+                    <div className="grid lg:grid-cols-3 gap-12 items-start">
+                        {/* Contact Info */}
+                        <div className="lg:col-span-1 space-y-8">
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center shrink-0">
+                                    <Mail className="w-6 h-6 text-indigo-600" />
+                                </div>
+                                <div className="min-w-0 flex-1">
+                                    <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-400 mb-1">Email</h4>
+                                    <a href={`mailto:${t('Contact.email')}`} className="text-lg font-bold text-zinc-900 hover:text-indigo-600 transition truncate block">
+                                        {t('Contact.email')}
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-pink-50 flex items-center justify-center shrink-0">
+                                    <Phone className="w-6 h-6 text-pink-600" />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-400 mb-1">Phone</h4>
+                                    <a href={`tel:${t('Contact.phone')}`} className="text-lg font-bold text-zinc-900 hover:text-indigo-600 transition">
+                                        {t('Contact.phone')}
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center shrink-0">
+                                    <MapPin className="w-6 h-6 text-amber-600" />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-400 mb-1">Location</h4>
+                                    <p className="text-lg font-bold text-zinc-900">
+                                        {t('Contact.location')}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Form */}
+                        <div className="lg:col-span-2">
+                            <ContactForm />
                         </div>
                     </div>
                 </section>
