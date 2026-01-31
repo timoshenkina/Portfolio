@@ -5,7 +5,11 @@ import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
-export default function ContactForm() {
+interface ContactFormProps {
+    variant?: 'default' | 'glass';
+}
+
+export default function ContactForm({ variant = 'default' }: ContactFormProps) {
     const t = useTranslations('Contact');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [formData, setFormData] = useState({
@@ -14,12 +18,21 @@ export default function ContactForm() {
         message: ''
     });
 
+    const isGlass = variant === 'glass';
+
+    const labelClasses = isGlass
+        ? "text-sm font-bold text-zinc-800 uppercase tracking-widest ml-1 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] opacity-90"
+        : "text-sm font-bold text-indigo-900/70 uppercase tracking-widest ml-1 drop-shadow-sm";
+
+    const inputClasses = `w-full px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 transition-all text-zinc-900 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] backdrop-blur-sm ${isGlass
+            ? "bg-white/20 border border-white/40 focus:ring-white/50 placeholder:text-zinc-600/60"
+            : "bg-indigo-50/30 border border-indigo-100/50 focus:ring-indigo-500/30 placeholder:text-zinc-500"
+        }`;
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('loading');
 
-        // Mock submission logic
-        // In a real app, you would send this to an API route or a service like Formspree
         try {
             await new Promise(resolve => setTimeout(resolve, 2000));
             console.log('Form submitted:', formData);
@@ -67,7 +80,7 @@ export default function ContactForm() {
                     >
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label htmlFor="name" className="text-sm font-bold text-indigo-100 uppercase tracking-widest ml-1 drop-shadow-sm blur-[0.3px]">
+                                <label htmlFor="name" className={labelClasses}>
                                     {t('name_label')}
                                 </label>
                                 <input
@@ -78,11 +91,11 @@ export default function ContactForm() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder={t('name_placeholder')}
-                                    className="w-full px-6 py-4 bg-indigo-50/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all text-zinc-900 placeholder:text-zinc-500 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] backdrop-blur-sm"
+                                    className={inputClasses}
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="email" className="text-sm font-bold text-indigo-100 uppercase tracking-widest ml-1 drop-shadow-sm blur-[0.3px]">
+                                <label htmlFor="email" className={labelClasses}>
                                     {t('email_label')}
                                 </label>
                                 <input
@@ -93,13 +106,13 @@ export default function ContactForm() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder={t('email_placeholder')}
-                                    className="w-full px-6 py-4 bg-indigo-50/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all text-zinc-900 placeholder:text-zinc-500 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] backdrop-blur-sm"
+                                    className={inputClasses}
                                 />
                             </div>
                         </div>
 
                         <div className="space-y-2">
-                            <label htmlFor="message" className="text-sm font-bold text-indigo-100 uppercase tracking-widest ml-1 drop-shadow-sm blur-[0.3px]">
+                            <label htmlFor="message" className={labelClasses}>
                                 {t('message_label')}
                             </label>
                             <textarea
@@ -110,7 +123,7 @@ export default function ContactForm() {
                                 value={formData.message}
                                 onChange={handleChange}
                                 placeholder={t('message_placeholder')}
-                                className="w-full px-6 py-4 bg-indigo-50/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all text-zinc-900 placeholder:text-zinc-500 shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] backdrop-blur-sm resize-none"
+                                className={`${inputClasses} resize-none`}
                             ></textarea>
                         </div>
 
@@ -124,17 +137,20 @@ export default function ContactForm() {
                         <button
                             disabled={status === 'loading'}
                             type="submit"
-                            className="w-full md:w-auto px-12 py-5 bg-[#E8E0F5]/60 backdrop-blur-xl text-[#4c1d95] font-medium rounded-full hover:bg-[#E8E0F5]/80 transition-all active:scale-95 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/50 group"
+                            className={`w-full md:w-auto px-12 py-5 font-medium rounded-full transition-all active:scale-95 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-[0_4px_12px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)] border group ${isGlass
+                                    ? "bg-white/40 backdrop-blur-xl text-zinc-900 hover:bg-white/60 border-white/20"
+                                    : "bg-[#E8E0F5]/60 backdrop-blur-xl text-[#4c1d95] hover:bg-[#E8E0F5]/80 border-white/50"
+                                }`}
                         >
                             {status === 'loading' ? (
                                 <>
-                                    <div className="w-5 h-5 border-2 border-[#581c87] border-t-transparent rounded-full animate-spin"></div>
+                                    <div className={`w-5 h-5 border-2 rounded-full animate-spin ${isGlass ? "border-zinc-900 border-t-transparent" : "border-[#581c87] border-t-transparent"}`}></div>
                                     {t('sending_btn')}
                                 </>
                             ) : (
                                 <>
                                     <span className="drop-shadow-sm tracking-wide">{t('send_btn')}</span>
-                                    <Send className="w-5 h-5 text-[#581c87] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                    <Send className={`w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform ${isGlass ? "text-zinc-600" : "text-[#581c87]"}`} />
                                 </>
                             )}
                         </button>

@@ -74,15 +74,15 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                         <div className="p-8 md:p-14 overflow-y-auto max-h-[90vh] relative z-10">
                             <div className="mb-10">
-                                <h2 className="text-4xl font-black mb-3 text-zinc-900 tracking-tight drop-shadow-sm">
+                                <h2 className="text-4xl font-black mb-3 text-zinc-900 tracking-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                                     {t('title')}
                                 </h2>
-                                <p className="text-zinc-700 text-lg leading-relaxed font-medium">
+                                <p className="text-zinc-700 text-lg leading-relaxed font-medium drop-shadow-[0_1px_1px_rgba(255,255,255,0.5)]">
                                     {t('description')}
                                 </p>
                             </div>
 
-                            <ContactForm />
+                            <ContactForm variant="glass" />
                         </div>
                     </motion.div>
                 </div>

@@ -16,12 +16,6 @@ export default function Home() {
     const t = useTranslations();
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-    // Helper to parse HTML strings safely (very basic replacement for demo)
-    // Ideally use the rich text support from next-intl
-    const renderHTML = (rawHTML: string) => {
-        return <span dangerouslySetInnerHTML={{ __html: rawHTML }} />;
-    };
-
     return (
         <div className="min-h-screen relative overflow-hidden font-sans selection:bg-indigo-100 selection:text-indigo-700">
 
@@ -69,9 +63,9 @@ export default function Home() {
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-zinc-900 mb-8 leading-[0.9]">
                         {t('Hero.title_graphic')} <br />
                         <span
-                            className="text-transparent bg-clip-text bg-[linear-gradient(110deg,#4338ca_0%,#a855f7_30%,rgba(255,255,255,0.4)_50%,#a855f7_70%,#ec4899_100%)] bg-[length:250%_100%] animate-iridescent drop-shadow-[0_2px_10px_rgba(168,85,247,0.15)]"
+                            className="text-transparent bg-clip-text bg-[linear-gradient(110deg,#4338ca_0%,#a855f7_30%,rgba(168,85,247,0.15)_50%,#a855f7_70%,#ec4899_100%)] bg-[length:250%_100%] animate-iridescent drop-shadow-[0_4px_12px_rgba(168,85,247,0.08)]"
                             style={{
-                                textShadow: '0 0 20px rgba(168, 85, 247, 0.1), 0 0 40px rgba(236, 72, 153, 0.05)'
+                                textShadow: '0 0 20px rgba(168, 85, 247, 0.03), 0 0 40px rgba(236, 72, 153, 0.02)'
                             }}
                         >
                             {t('Hero.title_uxui')}
